@@ -28,3 +28,7 @@ jobs:
           command -v xcodegen || true
           command -v tuist || true
           command -v brew || true
+      - name: Install XcodeGen
+        run: |
+          brew install xcodegen
+          xcodegen --version
