@@ -21,3 +21,10 @@ jobs:
         run: |
           echo "=== EmergencySOS files ==="
           find . -maxdepth 4 -type f -print
+
+      - name: Check project generation tools
+        run: |
+          echo "=== Checking tools ==="
+          command -v xcodegen || true
+          command -v tuist || true
+          command -v brew || true
