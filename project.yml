@@ -1,0 +1,31 @@
+name: EmergencySOS
+
+options:
+  bundleIdPrefix: org.emergencysos
+  deploymentTarget:
+    iOS: "16.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+
+targets:
+  EmergencySOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.emergencysos.emergencysos
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_NSLocationWhenInUseUsageDescription: "برای ارسال موقعیت در شرایط اضطراری برنامه به موقعیت مکانی شما نیاز دارد."
+
+    info:
+      path: EmergencySOS-Info.plist
+      properties:
+        CFBundleDisplayName: EmergencySOS
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
