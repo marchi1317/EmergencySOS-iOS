@@ -1,0 +1,13 @@
+﻿iOS Xcode Required Settings
+===========================
+
+Location Permission:
+
+Info.plist key:
+NSLocationWhenInUseUsageDescription
+
+Persian description:
+برای ارسال موقعیت در شرایط اضطراری برنامه به موقعیت مکانی شما نیاز دارد.
+
+Important:
+This permission must be configured in the final Xcode project before testing LocationService on an iPhone.
