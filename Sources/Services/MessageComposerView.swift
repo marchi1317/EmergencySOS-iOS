@@ -54,7 +54,8 @@ struct MessageComposerView: UIViewControllerRepresentable {
         }
 
         // MARK: - Message Result
-
+            
+        @MainActor
         func messageComposeViewController(
             _ controller: MFMessageComposeViewController,
             didFinishWith result: MessageComposeResult
