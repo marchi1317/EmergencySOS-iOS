@@ -41,9 +41,10 @@ struct MessageComposerView: UIViewControllerRepresentable {
 
     // MARK: - Coordinator
 
-    final class Coordinator:
-        NSObject,
-        MFMessageComposeViewControllerDelegate {
+           @MainActor
+        final class Coordinator:
+            NSObject,
+            MFMessageComposeViewControllerDelegate {
 
         private let onFinish: (MessageComposeResult) -> Void
 
