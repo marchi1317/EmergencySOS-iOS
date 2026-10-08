@@ -19,7 +19,7 @@ struct EmergencyMessage {
     }
 
     // MARK: - SMS Availability
-
+    @MainActor
     static var canSendText: Bool {
         MFMessageComposeViewController.canSendText()
     }
