@@ -45,3 +45,9 @@ jobs:
             -configuration Debug \
             CODE_SIGNING_ALLOWED=NO \
             build
+      - name: Upload iOS Simulator app
+        uses: actions/upload-artifact@v4
+        with:
+        name: EmergencySOS-iOS-Simulator
+        path: ~/Library/Developer/Xcode/DerivedData/**/Build/Products/Debug-iphonesimulator/EmergencySOS.app
+      if-no-files-found: error
