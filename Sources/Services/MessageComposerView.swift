@@ -1,5 +1,5 @@
-﻿import SwiftUI
-import MessageUI
+import SwiftUI
+@preconcurrency import MessageUI
 
 struct MessageComposerView: UIViewControllerRepresentable {
 
@@ -41,10 +41,9 @@ struct MessageComposerView: UIViewControllerRepresentable {
 
     // MARK: - Coordinator
 
-           @MainActor
-        final class Coordinator:
-            NSObject,
-            MFMessageComposeViewControllerDelegate {
+    final class Coordinator:
+        NSObject,
+        MFMessageComposeViewControllerDelegate {
 
         private let onFinish: (MessageComposeResult) -> Void
 
@@ -55,16 +54,15 @@ struct MessageComposerView: UIViewControllerRepresentable {
         }
 
         // MARK: - Message Result
-            
-        @MainActor
+
         func messageComposeViewController(
             _ controller: MFMessageComposeViewController,
             didFinishWith result: MessageComposeResult
         ) {
 
-            controller.dismiss(animated: true) {
-                self.onFinish(result)
-            }
+            controller.dismiss(animated: true)
+
+            onFinish(result)
         }
     }
 }
