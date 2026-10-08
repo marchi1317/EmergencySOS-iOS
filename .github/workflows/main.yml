@@ -28,14 +28,17 @@ jobs:
           command -v xcodegen || true
           command -v tuist || true
           command -v brew || true
+
       - name: Install XcodeGen
         run: |
           brew install xcodegen
           xcodegen --version
+
       - name: Generate Xcode project
         run: |
           xcodegen generate
-          ls -la 
+          ls -la
+
       - name: Build iOS project
         run: |
           xcodebuild \
@@ -45,9 +48,10 @@ jobs:
             -configuration Debug \
             CODE_SIGNING_ALLOWED=NO \
             build
+
       - name: Upload iOS Simulator app
         uses: actions/upload-artifact@v4
         with:
-        name: EmergencySOS-iOS-Simulator
-        path: ~/Library/Developer/Xcode/DerivedData/**/Build/Products/Debug-iphonesimulator/EmergencySOS.app
-      if-no-files-found: error
+          name: EmergencySOS-iOS-Simulator
+          path: ~/Library/Developer/Xcode/DerivedData/**/Build/Products/Debug-iphonesimulator/EmergencySOS.app
+          if-no-files-found: error
