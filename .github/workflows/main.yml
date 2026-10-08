@@ -35,4 +35,13 @@ jobs:
       - name: Generate Xcode project
         run: |
           xcodegen generate
-          ls -la     
+          ls -la 
+      - name: Build iOS project
+        run: |
+          xcodebuild \
+            -project EmergencySOS.xcodeproj \
+            -scheme EmergencySOS \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            build
