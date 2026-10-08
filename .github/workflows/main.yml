@@ -65,3 +65,10 @@ jobs:
           name: EmergencySOS-iOS-Simulator
           path: ~/Library/Developer/Xcode/DerivedData/**/Build/Products/Debug-iphonesimulator/EmergencySOS.app
           if-no-files-found: error
+
+      - name: Upload iPhone Device app
+        uses: actions/upload-artifact@v4
+        with:
+          name: EmergencySOS-iPhone-Device
+          path: ~/Library/Developer/Xcode/DerivedData/**/Build/Products/Debug-iphoneos/EmergencySOS.app
+          if-no-files-found: error
