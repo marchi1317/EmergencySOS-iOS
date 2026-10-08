@@ -49,6 +49,16 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build
 
+      - name: Build iPhone Device project
+        run: |
+              xcodebuild \
+               -project EmergencySOS.xcodeproj \
+               -scheme EmergencySOS \
+               -sdk iphoneos \
+               -configuration Debug \
+               CODE_SIGNING_ALLOWED=NO \
+               build
+       
       - name: Upload iOS Simulator app
         uses: actions/upload-artifact@v4
         with:
