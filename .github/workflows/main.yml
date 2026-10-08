@@ -32,3 +32,7 @@ jobs:
         run: |
           brew install xcodegen
           xcodegen --version
+      - name: Generate Xcode project
+        run: |
+          xcodegen generate
+          ls -la     
