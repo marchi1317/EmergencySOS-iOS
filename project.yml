@@ -20,7 +20,9 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: org.emergencysos.emergencysos
         GENERATE_INFOPLIST_FILE: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_NSLocationWhenInUseUsageDescription: "برای ارسال موقعیت در شرایط اضطراری برنامه به موقعیت مکانی شما نیاز دارد."
+       
 
     info:
       path: EmergencySOS-Info.plist
