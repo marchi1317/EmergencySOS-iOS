@@ -14,9 +14,10 @@ targets:
     type: application
     platform: iOS
    
-    sources:
+       sources:
       - path: Sources
       - path: Assets.xcassets
+        buildPhase: resources
 
     settings:
       base:
