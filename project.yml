@@ -13,8 +13,10 @@ targets:
   EmergencySOS:
     type: application
     platform: iOS
+   
     sources:
       - path: Sources
+      - path: Assets.xcassets
 
     settings:
       base:
